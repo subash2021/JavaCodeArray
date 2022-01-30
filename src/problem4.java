@@ -1,4 +1,5 @@
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class problem4 {
@@ -6,14 +7,21 @@ public class problem4 {
 
         //4. Write a Java program to remove a specific element from an array
         System.out.println("");
-        int [] intArray = new int[4];
-        intArray[0] = 2;
-        intArray[1] = 4;
-        intArray[2] = 6;
-        intArray[3] = 8;
+        int [] intArray = {2,4,6,8,10};
         int indexTobeRemoved = 3;
+        int [] newIntArray = new int[intArray.length-1];
         System.out.println("Original Array: "+ Arrays.toString(intArray));
 
+
+        for(int i = 0, k = 0;i<intArray.length;i++ )
+        {
+            if(i==indexTobeRemoved)
+            {
+                continue;
+            }
+            newIntArray[k++] = intArray[i];
+        }
+        System.out.println("New Array after removing the element: " + Arrays.toString(newIntArray));
     }
 
 }
